@@ -19,6 +19,7 @@ namespace FreeCourse.IdentityServer
             new ApiResource(ConfigConstants.ApiResources.PhotoStock){ Scopes={ ConfigConstants.Scopes.PhotoStockFullPermission } },
             new ApiResource(ConfigConstants.ApiResources.Basket){ Scopes={ ConfigConstants.Scopes.BasketFullPermission } },
             new ApiResource(ConfigConstants.ApiResources.Discount){ Scopes={ ConfigConstants.Scopes.DiscountFullPermission } },
+            new ApiResource(ConfigConstants.ApiResources.Order){ Scopes={ ConfigConstants.Scopes.OrderFullPermission } },
             new ApiResource(IdentityServerConstants.LocalApi.ScopeName)
         };
 
@@ -43,6 +44,7 @@ namespace FreeCourse.IdentityServer
                 new ApiScope(ConfigConstants.Scopes.PhotoStockFullPermission, ConfigConstants.ScopeMessages.PhotoStockFullPermissionMsg),
                 new ApiScope(ConfigConstants.Scopes.BasketFullPermission, ConfigConstants.ScopeMessages.BasketFullPermissionMsg),
                 new ApiScope(ConfigConstants.Scopes.DiscountFullPermission, ConfigConstants.ScopeMessages.DiscountFullPermissionMsg),
+                new ApiScope(ConfigConstants.Scopes.OrderFullPermission, ConfigConstants.ScopeMessages.OrderFullPermissionMsg),
                 new ApiScope(IdentityServerConstants.LocalApi.ScopeName),
             };
 
@@ -68,6 +70,7 @@ namespace FreeCourse.IdentityServer
                    AllowedScopes = {
                         ConfigConstants.Scopes.BasketFullPermission,
                         ConfigConstants.Scopes.DiscountFullPermission,
+                        ConfigConstants.Scopes.OrderFullPermission,
                         IdentityServerConstants.StandardScopes.Email,
                         IdentityServerConstants.StandardScopes.Address,
                         IdentityServerConstants.StandardScopes.OpenId,

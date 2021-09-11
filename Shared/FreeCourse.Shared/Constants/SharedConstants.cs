@@ -9,6 +9,7 @@
             public const string PhotoStock = "resource_photo_stock";
             public const string Basket = "resource_basket";
             public const string Discount = "resource_discount";
+            public const string Order = "resource_order";
         }
     }
 }
