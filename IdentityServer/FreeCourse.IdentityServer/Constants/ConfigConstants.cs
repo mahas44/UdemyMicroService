@@ -13,6 +13,7 @@
             public const string Basket = "resource_basket";
             public const string Discount = "resource_discount";
             public const string Order = "resource_order";
+            public const string Payment = "resource_payment";
         }
 
         public class Scopes
@@ -22,6 +23,7 @@
             public const string BasketFullPermission = "basket_fullpermission";
             public const string DiscountFullPermission = "dicount_fullpermission";
             public const string OrderFullPermission = "order_fullpermission";
+            public const string PaymentFullPermission = "payment_fullpermission";
         }
 
         public class ScopeMessages
@@ -31,6 +33,7 @@
             public const string BasketFullPermissionMsg = "Basket API için full erişim";
             public const string DiscountFullPermissionMsg = "Dicount API için full erişim";
             public const string OrderFullPermissionMsg = "Order API için full erişim";
+            public const string PaymentFullPermissionMsg = "Payment API için full erişim";
         }
 
         public class CustomIdentityResource

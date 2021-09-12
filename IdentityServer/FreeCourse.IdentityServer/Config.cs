@@ -20,6 +20,7 @@ namespace FreeCourse.IdentityServer
             new ApiResource(ConfigConstants.ApiResources.Basket){ Scopes={ ConfigConstants.Scopes.BasketFullPermission } },
             new ApiResource(ConfigConstants.ApiResources.Discount){ Scopes={ ConfigConstants.Scopes.DiscountFullPermission } },
             new ApiResource(ConfigConstants.ApiResources.Order){ Scopes={ ConfigConstants.Scopes.OrderFullPermission } },
+            new ApiResource(ConfigConstants.ApiResources.Payment){ Scopes={ ConfigConstants.Scopes.PaymentFullPermission } },
             new ApiResource(IdentityServerConstants.LocalApi.ScopeName)
         };
 
@@ -45,6 +46,7 @@ namespace FreeCourse.IdentityServer
                 new ApiScope(ConfigConstants.Scopes.BasketFullPermission, ConfigConstants.ScopeMessages.BasketFullPermissionMsg),
                 new ApiScope(ConfigConstants.Scopes.DiscountFullPermission, ConfigConstants.ScopeMessages.DiscountFullPermissionMsg),
                 new ApiScope(ConfigConstants.Scopes.OrderFullPermission, ConfigConstants.ScopeMessages.OrderFullPermissionMsg),
+                new ApiScope(ConfigConstants.Scopes.PaymentFullPermission, ConfigConstants.ScopeMessages.PaymentFullPermissionMsg),
                 new ApiScope(IdentityServerConstants.LocalApi.ScopeName),
             };
 
@@ -57,7 +59,11 @@ namespace FreeCourse.IdentityServer
                    ClientId = ConfigConstants.ClientIdForEveryOne,
                    ClientSecrets = {new Secret(ConfigConstants.Secret.Sha256()) },
                    AllowedGrantTypes = GrantTypes.ClientCredentials,
-                   AllowedScopes = { ConfigConstants.Scopes.CatalogFullPermission, ConfigConstants.Scopes.PhotoStockFullPermission, IdentityServerConstants.LocalApi.ScopeName },
+                   AllowedScopes = { 
+                        ConfigConstants.Scopes.CatalogFullPermission,
+                        ConfigConstants.Scopes.PhotoStockFullPermission,
+                        IdentityServerConstants.LocalApi.ScopeName
+                    },
 
                 },
                 new Client()
@@ -71,6 +77,7 @@ namespace FreeCourse.IdentityServer
                         ConfigConstants.Scopes.BasketFullPermission,
                         ConfigConstants.Scopes.DiscountFullPermission,
                         ConfigConstants.Scopes.OrderFullPermission,
+                        ConfigConstants.Scopes.PaymentFullPermission,
                         IdentityServerConstants.StandardScopes.Email,
                         IdentityServerConstants.StandardScopes.Address,
                         IdentityServerConstants.StandardScopes.OpenId,
