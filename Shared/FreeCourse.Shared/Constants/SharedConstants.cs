@@ -11,6 +11,7 @@
             public const string Discount = "resource_discount";
             public const string Order = "resource_order";
             public const string Payment = "resource_payment";
+            public const string Gateway = "resource_gateway";
         }
     }
 }

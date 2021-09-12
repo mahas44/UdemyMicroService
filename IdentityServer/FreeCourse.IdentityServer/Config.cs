@@ -21,6 +21,7 @@ namespace FreeCourse.IdentityServer
             new ApiResource(ConfigConstants.ApiResources.Discount){ Scopes={ ConfigConstants.Scopes.DiscountFullPermission } },
             new ApiResource(ConfigConstants.ApiResources.Order){ Scopes={ ConfigConstants.Scopes.OrderFullPermission } },
             new ApiResource(ConfigConstants.ApiResources.Payment){ Scopes={ ConfigConstants.Scopes.PaymentFullPermission } },
+            new ApiResource(ConfigConstants.ApiResources.Gateway){ Scopes={ ConfigConstants.Scopes.GatewayFullPermission } },
             new ApiResource(IdentityServerConstants.LocalApi.ScopeName)
         };
 
@@ -47,6 +48,7 @@ namespace FreeCourse.IdentityServer
                 new ApiScope(ConfigConstants.Scopes.DiscountFullPermission, ConfigConstants.ScopeMessages.DiscountFullPermissionMsg),
                 new ApiScope(ConfigConstants.Scopes.OrderFullPermission, ConfigConstants.ScopeMessages.OrderFullPermissionMsg),
                 new ApiScope(ConfigConstants.Scopes.PaymentFullPermission, ConfigConstants.ScopeMessages.PaymentFullPermissionMsg),
+                new ApiScope(ConfigConstants.Scopes.GatewayFullPermission, ConfigConstants.ScopeMessages.GatewayFullPermissionMsg),
                 new ApiScope(IdentityServerConstants.LocalApi.ScopeName),
             };
 
@@ -62,6 +64,7 @@ namespace FreeCourse.IdentityServer
                    AllowedScopes = { 
                         ConfigConstants.Scopes.CatalogFullPermission,
                         ConfigConstants.Scopes.PhotoStockFullPermission,
+                        ConfigConstants.Scopes.GatewayFullPermission,
                         IdentityServerConstants.LocalApi.ScopeName
                     },
 
@@ -78,6 +81,7 @@ namespace FreeCourse.IdentityServer
                         ConfigConstants.Scopes.DiscountFullPermission,
                         ConfigConstants.Scopes.OrderFullPermission,
                         ConfigConstants.Scopes.PaymentFullPermission,
+                        ConfigConstants.Scopes.GatewayFullPermission,
                         IdentityServerConstants.StandardScopes.Email,
                         IdentityServerConstants.StandardScopes.Address,
                         IdentityServerConstants.StandardScopes.OpenId,
