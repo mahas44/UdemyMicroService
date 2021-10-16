@@ -9,6 +9,9 @@ namespace FreeCourse.Services.Basket.Dtos
         public string DiscountCode { get; set; }
         public List<BasketItemDto> BasketItems { get; set; }
 
+        /// <summary>
+        /// Sepette bulunan ürünlerin toplam fiyatını hesaplar.
+        /// </summary>
         public decimal TotalCount
         {
             get => BasketItems.Sum(x => x.Price * x.Quantity);

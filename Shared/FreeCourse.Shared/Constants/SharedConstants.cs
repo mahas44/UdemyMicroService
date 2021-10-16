@@ -3,6 +3,8 @@
     public struct SharedConstants
     {
         public const string IdentityServerUrl = "IdentityServerUrl";
+        public const string ClientIdForEveryOne = "WebMvcClient";
+        public const string ClientIdForUser = "WebMvcClientForUser";
         public struct ApiResources
         {
             public const string Catalog = "resource_catalog";
