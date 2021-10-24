@@ -1,0 +1,159 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": ".NET Core Launch (Gateway)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program":"${workspaceFolder}/FreeCourse.Gateway/bin/Debug/net5.0/FreeCourse.Gateway.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/FreeCourse.Gateway",
+            "launchBrowser": {
+                "enabled": false
+            },
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        },
+
+        {
+            "name": ".NET Core Launch (Identity Server)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/IdentityServer/FreeCourse.IdentityServer/bin/Debug/netcoreapp3.1/FreeCourse.IdentityServer.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/IdentityServer/FreeCourse.IdentityServer",
+            "launchBrowser": {
+                "enabled": false
+            },
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        },
+
+        {
+            "name": ".NET Core Launch (Basket)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/Services/Basket/FreeCourse.Services.Basket/bin/Debug/net5.0/FreeCourse.Services.Basket.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/Services/Basket/FreeCourse.Services.Basket",
+            "launchBrowser": {
+                "enabled": false
+            },
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        },
+
+        {
+            "name": ".NET Core Launch (Catalog)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/Services/Catalog/FreeCourse.Services.Catalog/bin/Debug/net5.0/FreeCourse.Services.Catalog.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/Services/Catalog/FreeCourse.Services.Catalog",
+            "launchBrowser": {
+                "enabled": false
+            },
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        },
+
+        {
+            "name": ".NET Core Launch (Discount)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/Services/Catalog/FreeCourse.Services.Discount/bin/Debug/net5.0/FreeCourse.Services.Discount.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/Services/Discount/FreeCourse.Services.Discount",
+            "launchBrowser": {
+                "enabled": false
+            },
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        },
+
+        {
+            "name": ".NET Core Launch (FakePayment)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/Services/FakePayment/FreeCourse.Services.FakePayment/bin/Debug/net5.0/FreeCourse.Services.FakePayment.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/Services/FakePayment/FreeCourse.Services.FakePayment",
+            "launchBrowser": {
+                "enabled": false
+            },
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        },
+
+        {
+            "name": ".NET Core Launch (Order)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/Services/Order/FreeCourse.Services.Order/bin/Debug/net5.0/FreeCourse.Services.Order.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/Services/Order/FreeCourse.Services.Order",
+            "launchBrowser": {
+                "enabled": false
+            },
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        },
+
+        {
+            "name": ".NET Core Launch (PhotoStock)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/Services/PhotoStock/FreeCourse.Services.PhotoStock/bin/Debug/net5.0/FreeCourse.Services.PhotoStock.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/Services/PhotoStock/FreeCourse.Services.PhotoStock",
+            "launchBrowser": {
+                "enabled": false
+            },
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        },
+
+        {
+            // Use IntelliSense to find out which attributes exist for C# debugging
+            // Use hover for the description of the existing attributes
+            // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
+            "name": ".NET Core Launch (web)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "watch",
+            // If you have changed target frameworks, make sure to update the program path.
+            "program": "${workspaceFolder}/Frontends/FreeCourse.Web/bin/Debug/net5.0/FreeCourse.Web.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/Frontends/FreeCourse.Web",
+            "stopAtEntry": false,
+            // Enable launching a web browser when ASP.NET Core starts. For more information: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
+            "launchBrowser": {
+                "enabled": true
+            },
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            }
+        },
+        {
+            "name": ".NET Core Attach",
+            "type": "coreclr",
+            "request": "attach"
+        },
+        
+    ]
+}
