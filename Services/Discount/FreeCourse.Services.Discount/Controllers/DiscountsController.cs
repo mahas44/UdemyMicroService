@@ -1,4 +1,4 @@
-﻿using FreeCource.Services.Discount.Services;
+﻿using FreeCourse.Services.Discount.Services;
 using FreeCourse.Shared.ControllerBases;
 using FreeCourse.Shared.Services;
 using Microsoft.AspNetCore.Http;
@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FreeCource.Services.Discount.Controllers
+namespace FreeCourse.Services.Discount.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -37,8 +37,8 @@ namespace FreeCource.Services.Discount.Controllers
             return CreateActionResultInstance(discount);
         }
 
-        [Route("/api/[controller]/[action]/{code}")]
         [HttpGet]
+        [Route("/api/[controller]/[action]/{code}")]
         public async Task<IActionResult> GetByCode(string code)
         {
             var userId = _sharedIdentityService.GetUserId;

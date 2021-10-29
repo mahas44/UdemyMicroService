@@ -1,4 +1,4 @@
-using FreeCource.Services.Discount.Services;
+using FreeCourse.Services.Discount.Services;
 using FreeCourse.Shared.Constants;
 using FreeCourse.Shared.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -18,7 +18,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FreeCource.Services.Discount
+namespace FreeCourse.Services.Discount
 {
     public class Startup
     {
@@ -50,7 +50,7 @@ namespace FreeCource.Services.Discount
             services.AddControllers(opt => opt.Filters.Add(new AuthorizeFilter(requireAuthorizePolicy)));
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "FreeCource.Services.Discount", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "FreeCourse.Services.Discount", Version = "v1" });
             });
         }
 
@@ -61,7 +61,7 @@ namespace FreeCource.Services.Discount
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "FreeCource.Services.Discount v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "FreeCourse.Services.Discount v1"));
             }
 
             app.UseRouting();

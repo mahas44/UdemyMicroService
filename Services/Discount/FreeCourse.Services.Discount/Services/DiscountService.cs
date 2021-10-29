@@ -8,7 +8,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FreeCource.Services.Discount.Services
+namespace FreeCourse.Services.Discount.Services
 {
     public class DiscountService : IDiscountService
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace FreeCource.Services.Discount.Services
+namespace FreeCourse.Services.Discount.Services
 {
     public interface IDiscountService
     {

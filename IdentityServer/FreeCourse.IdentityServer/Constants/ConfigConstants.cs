@@ -22,7 +22,7 @@
             public const string CatalogFullPermission = "catalog_fullpermission";
             public const string PhotoStockFullPermission = "photo_stock_fullpermission";
             public const string BasketFullPermission = "basket_fullpermission";
-            public const string DiscountFullPermission = "dicount_fullpermission";
+            public const string DiscountFullPermission = "discount_fullpermission";
             public const string OrderFullPermission = "order_fullpermission";
             public const string PaymentFullPermission = "payment_fullpermission";
             public const string GatewayFullPermission = "gateway_fullpermission";
