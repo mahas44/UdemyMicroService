@@ -96,9 +96,9 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/Services/Order/FreeCourse.Services.Order/bin/Debug/net5.0/FreeCourse.Services.Order.dll",
+            "program": "${workspaceFolder}/Services/Order/FreeCourse.Services.Order.API/bin/Debug/net5.0/FreeCourse.Services.Order.API.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/Services/Order/FreeCourse.Services.Order",
+            "cwd": "${workspaceFolder}/Services/Order/FreeCourse.Services.Order.API",
             "launchBrowser": {
                 "enabled": false
             },
