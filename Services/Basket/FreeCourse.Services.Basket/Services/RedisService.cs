@@ -1,4 +1,6 @@
-﻿using StackExchange.Redis;
+﻿using System.Collections.Generic;
+using System.Linq;
+using StackExchange.Redis;
 
 namespace FreeCourse.Services.Basket.Services
 {
@@ -18,5 +20,7 @@ namespace FreeCourse.Services.Basket.Services
         public void Connect() => _connectionMultiplexer = ConnectionMultiplexer.Connect($"{_host}:{_port}");
 
         public IDatabase GetDatabase(int db = 1) => _connectionMultiplexer.GetDatabase(db);
+
+        public List<RedisKey> GetKeys() => _connectionMultiplexer.GetServer($"{_host}:{_port}").Keys(1).ToList();
     }
 }

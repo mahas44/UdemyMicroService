@@ -155,5 +155,13 @@
             "request": "attach"
         },
         
+    ],
+    "compounds": [
+        {
+            "name": "Start All Projects",
+            "configurations": [".NET Core Launch (Gateway)", ".NET Core Launch (Identity Server)",
+                ".NET Core Launch (Basket)", ".NET Core Launch (Catalog)", ".NET Core Launch (Discount)", ".NET Core Launch (FakePayment)",
+             ".NET Core Launch (Order)", ".NET Core Launch (PhotoStock)", ".NET Core Launch (web)"]
+        }
     ]
 }

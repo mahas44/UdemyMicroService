@@ -33,7 +33,7 @@ namespace FreeCourse.Services.Order.API
             services.AddMassTransit(x =>
             {
                 x.AddConsumer<CreateOrderMessageCommandConsumer>();
-
+                x.AddConsumer<CourseNameChangedEventConsumer>();
                 // Default port : 5672
                 x.UsingRabbitMq((context, cfg) =>
                 {
@@ -46,6 +46,9 @@ namespace FreeCourse.Services.Order.API
                     // Fake Payment Controlelrda bu endpoint message yollanıyor. Dinlemek için aynı ismi kullanmak zorundayız
                     cfg.ReceiveEndpoint("order-created", e => {
                         e.ConfigureConsumer<CreateOrderMessageCommandConsumer>(context);
+                    });
+                    cfg.ReceiveEndpoint("course-name-changed-event-order-service", e => {
+                        e.ConfigureConsumer<CourseNameChangedEventConsumer>(context);
                     });
                 });
 

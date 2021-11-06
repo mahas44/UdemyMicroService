@@ -3,11 +3,14 @@ using FreeCourse.Services.Catalog.Dtos;
 using FreeCourse.Services.Catalog.Models;
 using FreeCourse.Services.Catalog.Settings;
 using FreeCourse.Shared.Dtos;
+using Mass = MassTransit;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FreeCourse.Shared.Messages;
+using FreeCourse.Shared.Services;
 
 namespace FreeCourse.Services.Catalog.Services
 {
@@ -16,8 +19,9 @@ namespace FreeCourse.Services.Catalog.Services
         private readonly IMongoCollection<Course> _courseCollection;
         private readonly IMongoCollection<Category> _categoryCollection;
         private readonly IMapper _mapper;
+        private readonly Mass.IPublishEndpoint _publishEndpoint;
 
-        public CourseService(IMapper mapper, IDatabaseSettings databaseSettings)
+        public CourseService(IMapper mapper, IDatabaseSettings databaseSettings, Mass.IPublishEndpoint publishEndpoint)
         {
             var client = new MongoClient(databaseSettings.ConnectionString);
 
@@ -27,6 +31,7 @@ namespace FreeCourse.Services.Catalog.Services
             _categoryCollection = database.GetCollection<Category>(databaseSettings.CategoriesCollectionName);
 
             _mapper = mapper;
+            _publishEndpoint = publishEndpoint;
         }
 
         public async Task<Response<List<CourseDto>>> GetAllAsync()
@@ -99,6 +104,14 @@ namespace FreeCourse.Services.Catalog.Services
             {
                 return Response<NoContent>.Fail("Course Not Found", 404);
             }
+
+            // Course güncellemesinde course name'i kullanan db'lerde güncelleme yapmak için rabbitmq'ya event yolluyoruz.
+            await _publishEndpoint.Publish<CourseNameChangedEvent>(new CourseNameChangedEvent 
+            { 
+                CourseId = updateCourse.Id, 
+                UpdateName = courseUpdateDto.Name 
+            });
+
             return Response<NoContent>.Success(204);
         }
 
