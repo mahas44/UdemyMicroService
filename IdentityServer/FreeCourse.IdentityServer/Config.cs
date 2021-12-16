@@ -67,7 +67,6 @@ namespace FreeCourse.IdentityServer
                         ConfigConstants.Scopes.GatewayFullPermission,
                         IdentityServerConstants.LocalApi.ScopeName
                     },
-
                 },
                 new Client()
                 {
@@ -78,10 +77,9 @@ namespace FreeCourse.IdentityServer
                    AllowOfflineAccess =true,
                    AllowedScopes = {
                         ConfigConstants.Scopes.BasketFullPermission,
-                        ConfigConstants.Scopes.DiscountFullPermission,
                         ConfigConstants.Scopes.OrderFullPermission,
-                        ConfigConstants.Scopes.PaymentFullPermission,
                         ConfigConstants.Scopes.GatewayFullPermission,
+                        ConfigConstants.Scopes.PaymentFullPermission,
                         IdentityServerConstants.StandardScopes.Email,
                         IdentityServerConstants.StandardScopes.Address,
                         IdentityServerConstants.StandardScopes.OpenId,
@@ -95,8 +93,21 @@ namespace FreeCourse.IdentityServer
                    RefreshTokenExpiration = TokenExpiration.Absolute,
                    AbsoluteRefreshTokenLifetime = (int) (DateTime.Now.AddDays(60)-DateTime.Now).TotalSeconds,
                    RefreshTokenUsage = TokenUsage.ReUse,
+                },
+                new Client()
+                {
+                   ClientName = ConfigConstants.ClientNameForTokenExchange,
+                   ClientId = ConfigConstants.ClientIdForTokenExchange,
+                   ClientSecrets = {new Secret(ConfigConstants.Secret.Sha256()) },
+                   AllowedGrantTypes = new[]{ ConfigConstants.GrantTypesForTokenExchange},
+                   AllowedScopes = { 
+                       ConfigConstants.Scopes.DiscountFullPermission,
+                       ConfigConstants.Scopes.PaymentFullPermission,
+                       IdentityServerConstants.StandardScopes.OpenId,
+                    },
+                },
 
-                }
+
             };
     }
 }

@@ -50,7 +50,7 @@ namespace FreeCourse.Services.FakePayment
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
                 options.Authority = Configuration[SharedConstants.IdentityServerUrl];
-                options.Audience = SharedConstants.ApiResources.Basket;
+                options.Audience = SharedConstants.ApiResources.Payment;
                 options.RequireHttpsMetadata = false;
             });
 

@@ -15,5 +15,22 @@
             public const string Payment = "resource_payment";
             public const string Gateway = "resource_gateway";
         }
+
+        public class Scopes
+        {
+            public const string CatalogFullPermission = "catalog_fullpermission";
+            public const string PhotoStockFullPermission = "photo_stock_fullpermission";
+            public const string BasketFullPermission = "basket_fullpermission";
+            public const string DiscountFullPermission = "discount_fullpermission";
+            public const string OrderFullPermission = "order_fullpermission";
+            public const string PaymentFullPermission = "payment_fullpermission";
+            public const string GatewayFullPermission = "gateway_fullpermission";
+            public const string OpenId = "openid";
+        }
+
+        public struct TokenExchange
+        {
+             public const string SubjectTokenType = "urn:ietf:params:oauth:token-type:access_token";
+        }
     }
 }

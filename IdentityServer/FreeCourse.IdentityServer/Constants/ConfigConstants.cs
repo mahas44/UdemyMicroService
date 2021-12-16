@@ -4,8 +4,12 @@
     {
         public const string Secret = "secret";
         public const string ClientName = "ASP.Net Core MVC";
+        public const string ClientNameForTokenExchange = "Token Exchange Client";
+        public const string ClientIdForTokenExchange = "TokenExchangeClient";
         public const string ClientIdForEveryOne = "WebMvcClient";
         public const string ClientIdForUser = "WebMvcClientForUser";
+        public const string GrantTypesForTokenExchange = "urn:ietf:params:oauth:grant-type:token-exchange";
+
         public class ApiResources
         {
             public const string Catalog = "resource_catalog";
