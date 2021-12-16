@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "FreeCource.Services.Discount": {
+    "FreeCourse.Services.Discount": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": false,
