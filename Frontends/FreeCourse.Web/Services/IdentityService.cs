@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Json;
 using System.Security.Claims;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -24,7 +25,8 @@ namespace FreeCourse.Web.Services.Interfaces
         private readonly ClientSettings _clientSettings;
         private readonly ServiceApiSettings _serviceApiSettings;
 
-        public IdentityService(HttpClient httpClient, IHttpContextAccessor httpContextAccessor, IOptions<ClientSettings> clientSettings, IOptions<ServiceApiSettings> serviceApiSettings)
+        public IdentityService(HttpClient httpClient, IHttpContextAccessor httpContextAccessor,
+            IOptions<ClientSettings> clientSettings, IOptions<ServiceApiSettings> serviceApiSettings)
         {
             _httpClient = httpClient;
             _httpContextAccessor = httpContextAccessor;
@@ -56,7 +58,7 @@ namespace FreeCourse.Web.Services.Interfaces
             };
 
             var token = await _httpClient.RequestRefreshTokenAsync(refreshTokenRequest);
-            if(token.IsError)
+            if (token.IsError)
             {
                 return null;
             }
@@ -169,5 +171,7 @@ namespace FreeCourse.Web.Services.Interfaces
 
             return Response<bool>.Success(200);
         }
+
+       
     }
 }

@@ -13,10 +13,12 @@ namespace FreeCourse.Web.Controllers
     public class AuthController : Controller
     {
         private readonly IIdentityService _identityService;
+        private readonly IIdentityService2 _identityService2;
 
-        public AuthController(IIdentityService identityService)
+        public AuthController(IIdentityService identityService, IIdentityService2 identityService2)
         {
             _identityService = identityService;
+            _identityService2 = identityService2;
         }
 
         public IActionResult SignIn()
@@ -50,6 +52,33 @@ namespace FreeCourse.Web.Controllers
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             await _identityService.RevokeRefreshToken();
             return RedirectToAction(nameof(HomeController.Index), "Home");
+        }
+
+        public IActionResult SignUp()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> SignUp(SignupInput signupInput)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
+            var response = await _identityService2.SignUp(signupInput);
+
+            if (response.Errors?.Count > 0)
+            {
+                response.Errors.ForEach(x =>
+                {
+                    ModelState.AddModelError(string.Empty, x);
+                });
+                return View(signupInput);
+            }
+
+            return RedirectToAction(nameof(SignIn));
         }
     }
 }
